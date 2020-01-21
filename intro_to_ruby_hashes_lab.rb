@@ -23,7 +23,7 @@ def read_from_hash(hash, key)
 end
 
 def update_counting_hash(hash, key)
-  hash.fetch(key) 
+  hash.fetch[key]
   # count=0
   #  if hash[key]
   #     hash [key]  += 1
