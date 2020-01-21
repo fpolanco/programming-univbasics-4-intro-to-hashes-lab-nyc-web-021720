@@ -22,14 +22,23 @@ def read_from_hash(hash, key)
   hash[key]
 end
 
-def update_counting_hash(hash, key)
-  #  hash.fetch(key)  { |key| 1 }
-    hash[key]
+# def update_counting_hash(hash, key)
+#   #  hash.fetch(key)  { |key| 1 }
+#     hash[key]
+# 
+#   # count=0
+#    if hash[key]
+#       hash [key]   += 1
+#      else
+#       hash[key]   = 1  # if the provided key is not present in the hash, add it and assign it to the value of 1
+#   end# if the provided key is present, increment its value by 1
+# end
 
-  # count=0
-   if hash[key]
-      hash [key]   += 1
-     else
-      hash[key]   = 1  # if the provided key is not present in the hash, add it and assign it to the value of 1
-  end# if the provided key is present, increment its value by 1
+def update_counting_hash(hash, key)
+  if hash.key?(key)
+    hash[key] += 1 
+  else
+    hash[key] = 1
+  end
+  hash
 end
